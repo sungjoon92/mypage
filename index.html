@@ -1,154 +1,149 @@
-<!doctype html>
-<html lang="en">
+<!DOCTYPE html>
+<html lang="ko">
 
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>쭈니</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/jquery-1.12.3.js"></script>
+    <script src="js/script.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
-        crossorigin="anonymous"></script>
+    <!-- slick 불러오기 -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick-theme.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.css">
 
-    <title>스파르타코딩클럽 | 부트스트랩 연습하기</title>
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Gowun+Dodum&display=swap');
 
-        * {
-            font-family: 'Gowun Dodum', sans-serif;
-        }
-
-        .mytitle {
-            background: green;
-            color: white;
-            height: 250px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            background: linear-gradient(0deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://movie-phinf.pstatic.net/20210715_95/1626338192428gTnJl_JPEG/movie_image.jpg');
-            background-position: center;
-            background-size: cover;
-
-        }
-
-        .mytitle>button {
-            width: 250px;
-            height: 50px;
-            background-color: transparent;
-            border: 1px solid white;
-            color: white;
-            border-radius: 50px;
-            margin-top: 20px;
-        }
-
-        .mytitle>button:hover {
-            border: 2px solid white;
-        }
-
-        .mycomment {
-            color: gray;
-        }
-
-        .mycards {
-            width: 1200px;
-            margin: 20px auto;
-        }
-        .mypost{
-            width: 500px;
-            margin: 20px auto;
-            padding: 20px;
-
-            box-shadow:  0px 0px 3px 0px gray;
-        }
-        .mybtn{
-            display: flex;
-            flex-direction: row;
-            align-items: center;
-            justify-content: center;
-            margin-top: 20px;
-        }
-        .mybtn > button{
-            margin-right: 10px;
-        }
-    </style>
 </head>
 
 <body>
-    <div class="mytitle">
-        <h1>내 생의 최고의 영화들</h1>
-        <button>영화 기록하기</button>
-    </div>
+    <div id="wrap">
+        <!-- header -->
+        <header id="header">
+            <h1 class="logo"><a href="#">JJooNY</a></h1>
+            <button class="nav_toggle">
+                <nav class="nav_icon">
+                    <div class="nav_icon1">
+                        <span></span><span></span><span></span>
+                    </div>
+                    <div class="nav_icon2">
+                        <span></span><span></span><span></span>
+                    </div>
+                </nav>
+            </button>
+            <nav class="nav">
+                <ul>
+                    <li class="bt01"><a href="#">메뉴1</a>
+                    </li>
+                    <li class="bt02"><a href="#">메뉴2</a>
+                    </li>
+                    <li class="bt03"><a href="#">메뉴3</a>
+                    </li>
+                    <li class="bt04"><a href="#">메뉴4</a>
+                    </li>
+                </ul>
+            </nav>
+        </header>
 
-    <div class="mypost">
-        <div class="form-floating mb-3">
-            <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
-            <label for="floatingInput">영화url</label>
-        </div>
-        <div class="form-floating">
-            <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea"></textarea>
-            <label for="floatingTextarea">코멘트</label>
-        </div>
-        <div class="mybtn">
-            <button type="button" class="btn btn-dark">기록하기</button>
-            <button type="button" class="btn btn-outline-dark">닫기</button>
-        </div>
-    </div>
 
-    <div class="mycards">
-        <div class="row row-cols-1 row-cols-md-4 g-4">
-            <div class="col">
-                <div class="card h-100">
-                    <img src="https://movie-phinf.pstatic.net/20210728_221/1627440327667GyoYj_JPEG/movie_image.jpg"
-                        class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title">영화제목</h5>
-                        <p class="card-text">코멘트</p>
-                        <p>⭐⭐⭐</p>
-                        <p class="mycomment">나의 의견</p>
-                    </div>
+        <div id="section1">
+
+            <!-- banner -->
+            <div id="main">
+                <div class="text">
+                    <h2>HELLO MY PORTFOLIO</h2>
+                    <h3>저의 포트폴리오에<br>오신것을 환영합니다^-^</h3>
                 </div>
             </div>
-            <div class="col">
-                <div class="card h-100">
-                    <img src="https://movie-phinf.pstatic.net/20210728_221/1627440327667GyoYj_JPEG/movie_image.jpg"
-                        class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title">영화제목</h5>
-                        <p class="card-text">코멘트</p>
-                        <p>⭐⭐⭐</p>
-                        <p class="mycomment">나의 의견</p>
-                    </div>
+        </div>
+
+        <div id="section2">
+            <!-- banner -->
+            <div id="banner">
+                <div class="text">
+                    <h3>집요함의 끝판왕 <br> 코딩에 진심인 <span>원성준</span> 입니다.</h3>
+                    <p>웹디이너 머시기머시기 Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos illum
+                        voluptatibus
+                        accusantium
+                        dolor sit ratione</p>
                 </div>
             </div>
-            <div class="col">
-                <div class="card h-100">
-                    <img src="https://movie-phinf.pstatic.net/20210728_221/1627440327667GyoYj_JPEG/movie_image.jpg"
-                        class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title">영화제목</h5>
-                        <p class="card-text">코멘트</p>
-                        <p>⭐⭐⭐</p>
-                        <p class="mycomment">나의 의견</p>
+            <!-- content -->
+            <div class="content_box">
+                
+                <!-- content2 -->
+                <div class="content1">
+                    <div class="con1-slider">
+                        <div class="item item-1">
+                            <div class="inner-text">
+                                <div class="ESTP"><img src="images/ESTP.jpg" alt="ESTP이미지"></div>
+                                <h2>ESTP</h2>
+                                <p>요즘 트렌트인 MBTI로 저를 소개합니다.</p>
+                                <div class="profile">
+                                    <img src="images/증명사진2.jpg" alt="myprofile">
+                                    <div class="profile_text">
+                                        <ul>
+                                            <h3>Web Publisher</h3>
+                                            <li>끊임없이 공부하고 달려가는 원성준입니다.</li>
+                                            <li>name : 원성준</li>
+                                            <li>phone : 010-6273-3282</li>
+                                            <li>e-mail : <a href="https://mail.naver.com/v2/new" target="_blank"> wsjtjdwns92@naver.com</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="item item-2">
+                            <div class="inner-text">
+                                <h3>E = Energy</h3>
+                                <p>
+                                    에너지가
+                                </P>
+                            </div>
+                        </div>
+                        <div class="item item-3">
+                            <div class="inner-text">
+                                <h3>S = Smali</h3>
+                                <p>힘들어도 밝게 항상 행복을 잃지않고 모두가 웃을수있게 만드는 웃음 바이러스 입니다.</p>
+                            </div>
+                        </div>
+                        <div class="item item-4">
+                            <div class="inner-text">
+                                <h3>T = Try</h3>
+                                <p>궁금한건 정말 다 해보고싶습니다. 끊임없이 시도하고 노력하고 파고드는 웹 퍼블리셔가 될것입니다.</p>
+                            </div>
+                        </div>
+                        <div class="item item-5">
+                            <div class="inner-text">
+                                <h3>P = Perfect</h3>
+                                <p>완벽함 추구</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="col">
-                <div class="card h-100">
-                    <img src="https://movie-phinf.pstatic.net/20210728_221/1627440327667GyoYj_JPEG/movie_image.jpg"
-                        class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title">영화제목</h5>
-                        <p class="card-text">코멘트</p>
-                        <p>⭐⭐⭐</p>
-                        <p class="mycomment">나의 의견</p>
+
+                <div class="content2">
+                    <div class="skills">
+                        <p>SKILLS</p>
+                        <ul>
+                            <li><a href="#"><img src="images/포샵.png" alt="포토샵"></a></li>
+                            <li><a href="#"><img src="images/일러스트.png" alt="일러스트"></a></li>
+                            <li><a href="#"><img src="images/인디자인.png" alt="인디자인"></a></li>
+                            <li><a href="#"><img src="images/html로고.png" alt="html로고"></a></li>
+                            <li><a href="#"><img src="images/css로고.png" alt="css로고"></a></li>
+                            <li><a href="#"><img src="images/jquery로고.png" alt="jquery로고"></a></li>
+                        </ul>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
+
+        <!-- sound -->
+        <audio id='audio_play' src='audio/냥이소리.mp3'></audio>
+
 </body>
 
 </html>
